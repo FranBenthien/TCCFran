@@ -145,6 +145,10 @@ namespace back.Model
                 entity.Property(e => e.City)
                     .HasMaxLength(30)
                     .IsUnicode(false);
+                
+                entity.Property(e => e.State)
+                    .HasMaxLength(30)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Country)
                     .HasMaxLength(30)

@@ -63,6 +63,7 @@
 
     public async void UserLogin()
     {
+        
         var result = await service.Login(
             this.email,
             this.password
@@ -74,7 +75,8 @@
             StateHasChanged();
             return;
         }
-         
+
+        await storage.SetAsync("logado", true);
         await storage.SetAsync("token", result);
         nav.NavigateTo("/");
     }

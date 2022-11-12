@@ -1,0 +1,23 @@
+@page "/hospedagem/{id}"
+
+@using Services;
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+
+@inject UserService service
+@inject NavigationManager nav
+@inject ProtectedSessionStorage storage
+
+<button onclick="@Somar">Clica aqui também kkkk</button>
+
+@id
+
+@code
+{
+    [Parameter]
+    public string id { get; set; }
+
+    public void Somar()
+    {
+        nav.NavigateTo("/formulario/" + (int.Parse(id) + 1).ToString());
+    }
+}

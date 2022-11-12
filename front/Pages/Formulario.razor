@@ -1,4 +1,4 @@
-@page "/formulario"
+@page "/formulario/{id}"
 
 @using Services;
 @using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
@@ -6,6 +6,15 @@
 @inject UserService service
 @inject NavigationManager nav
 @inject ProtectedSessionStorage storage
+
+<button onclick="@Somar">Clica aqui vei kkkk</button>
+
+@if (id.Length > 1)
+{
+    <p>Numero grandão hein? kkkk</p>
+}
+
+@id
 
 @* <div class="formulario">  
 
@@ -37,3 +46,14 @@
     </div>
     
 </div> *@
+
+@code
+{
+    [Parameter]
+    public string id { get; set; }
+
+    public void Somar()
+    {
+        nav.NavigateTo("/hospedagem/" + (int.Parse(id) + 1).ToString());
+    }
+}
