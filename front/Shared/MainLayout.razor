@@ -3,23 +3,38 @@
 <PageTitle>WebSiteViagem</PageTitle>
 
 <header>
-    <ul class="navigation"> 
-        <li>
-            <a href="">Home</a>
+<!-- Barra de navegação -->
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+    <a href="#" class="navbar-brand">CURITIBANDO</a>
+    <div class="collapse navbar-collapse"></div>
+
+    <!-- Botão para menu hamburger -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav mg-auto">
+        <li class="nav-item">
+            <a href="" class="nav-link">Home</a>
+        </li> 
+        <li class="nav-item">
+            <a href="/about" class="nav-link">Sobre nós</a>
+        </li> 
+        <li class="nav-item">
+            <a href="/register" class="nav-link">Cadastro</a>
         </li>
-        <li>
-            <a href="/about">Sobre Nós</a>
+        <li class="nav-item">
+            <a href="/login" class="nav-link">Login</a>
         </li>
-        <li>
-            <a href="/login">Login</a>
+        <li class="nav-item">
+            <a href="#Suporte" class="nav-link">Suporte</a>
         </li>
-        <li>
-            <a href="/register">Cadastrar-se</a>
-        </li>              
-        <li>
-            <a href="/products">Suporte</a>
-        </li>
-    </ul>    
+        </ul>
+    </div>
+    </div>      
+</nav> 
 </header>
 <main>
     @Body
