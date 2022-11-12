@@ -38,3 +38,7 @@ main {
 .headercontainer a{
     text-decoration: none;
 }
+
+.navbar-collapse{
+    justify-content: right;
+}
