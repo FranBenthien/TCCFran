@@ -7,7 +7,22 @@
 @inject NavigationManager nav
 @inject ProtectedSessionStorage storage
 
-<div class="logcontainer">   
+<body class= "bodycontainer">
+
+    <body class= "body1container">
+    
+        <div class="sejabemvindo">
+            <p>
+                <h1>CURITIBANDO</h1>
+                <h1>Seja bem-vindo!</h1>
+                <h1>Acesse sua conta agora mesmo.</h1>
+            </p>
+    
+        </div>
+    </body>
+</body>
+<body class= "log1container">
+    <div class="logcontainer">
     
     <div class="logincontainer">
         @if (loginError != "")
@@ -30,7 +45,9 @@
             Entrar
         </button>
     </div>
-</div>
+    </div>
+</body>
+
 
 @code 
 {

@@ -87,17 +87,17 @@ public class UserController : ControllerBase
              return this.BadRequest(errors);
          }
 
-         Usuario usuario = new Usuario();
-         usuario.Name = user.Name;
-         usuario.Email = user.Email;
-         usuario.City = user.City;
-         usuario.State = user.State;
-         usuario.Country = user.Country;
-         usuario.UserId = user.UserId;
-         usuario.Userpass = user.Password;                  
+        Usuario usuario = new Usuario();
+        usuario.Name = user.Name;
+        usuario.Email = user.Email;
+        usuario.City = user.City;
+        usuario.State = user.State;
+        usuario.Country = user.Country;
+        usuario.UserId = user.UserId;
+        usuario.Userpass = user.Password;                  
 
-         context.Add(usuario);
-         context.SaveChanges();
+        context.Add(usuario);
+        context.SaveChanges();
         
         return Ok();
     }

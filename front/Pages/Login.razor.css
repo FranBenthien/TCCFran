@@ -1,9 +1,9 @@
 .logincontainer{
    padding: 10px;
-   background-color: grey;
+   background-color: #000000;
    border: 5px;
    border-color: blue;
-   border-radius: 5px;
+   border-radius: 16px 0px 0px 16px;;
    position: center;
    width: 530px;
    height: 250px;
@@ -16,6 +16,37 @@
    flex-direction: row;
    justify-content: space-around;
    align-items: center;
-   background: #E5E5E5;
+   background: #000000;
    border-radius: 10px;
+   font-family: 'Poppins';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 27px;
+   line-height: 122.02%;
+   color: #FFFFFF;
+   
+}
+
+.bodycontainer{
+   position: absolute;
+   width: 343.35px;
+   height: 51.02px;
+   left: 85px;
+   top: 550px;
+   font-family: 'Poppins';
+   font-style: normal;
+   font-weight: 900;
+   font-size: 27px;
+   line-height: 122.02%;
+   color: #FFFFFF;
+}
+
+.html{
+   position: absolute;
+   width: 509.98px;
+   height: 100%;
+   left: 0px;
+   top: 0px;
+   background: #000000;
+   border-radius: 16px 0px 0px 16px;
 }
