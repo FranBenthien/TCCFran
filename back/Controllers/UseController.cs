@@ -110,4 +110,42 @@ public class UserController : ControllerBase
 
     }
 
+     [HttpPost("formulario")]
+    public IActionResult Formulario(
+        [FromBody]FormularioDTO form
+        )
+    {
+         using WebSiteViagemContext context = new WebSiteViagemContext();
+
+         List<string> errors = new List<string>();
+
+         if (form.VisitedCity == null)
+         {
+             errors.Add("Cidade não informada");
+         }
+
+         if (form.ArrivalDate == null)
+         {
+             errors.Add("Data não informada");
+         }
+
+         if (form.DepartureDate == null)
+         {
+             errors.Add("Data não informada");
+         }
+
+
+        Formulario formulario = new Formulario();
+        formulario.VisitedCity = form.VisitedCity;
+        formulario.ArrivalDate = form.ArrivalDate;
+        formulario.DepartureDate = form.DepartureDate;
+                  
+        context.Add(formulario);
+        context.SaveChanges();
+        
+        return Ok();
+    }
+
+
+
 }

@@ -16,19 +16,42 @@
 </div>
     <div class="form-group">
         <label for="exampleFormControlSelect1">Cidade Visitada</label>
-        <select class="form-control" id="visitedcity">
+        <select class="form-control" id="VisitedCity">
             <option>Selecione uma opção</option>
             <option>Curitiba</option>
         </select>
     </div>
     <div class="form-group">
         <label for="exampleFormControlSelect1">Data de Chegada</label>
-        <textarea class="date" id="arrivaldate" placeholder="00/00/0000"></textarea>
+        <textarea class="date" id="ArrivalDate" placeholder="00/00/0000"></textarea>
     </div>
      <div class="form-group">
         <label for="exampleFormControlSelect1">Data de Retorno</label>
-        <textarea class="date" id="departuredate" placeholder="00/00/0000"></textarea>
+        <textarea class="date" id="DepartureDate" placeholder="00/00/0000"></textarea>
     </div>
     <div class="botoes">    
-        <button class="botao-avancar" onclick="avancar()">Avançar</button>   
+        <button class="botao-avancar" onclick="createFormulario(/hospedagem)">Avançar</button>   
     </div>
+
+@code
+{
+    private string VisitedCity;
+    private DateTime ArrivalDate;
+    private DateTime DepartureDate;
+    
+    public async void createFormulario()
+    {    
+        await service.Formulario(
+            this.VisitedCity,
+            this.ArrivalDate,
+            this.DepartureDate);
+
+        this.VisitedCity= "";
+        this.ArrivalDate= DateTime.Now;
+        this.DepartureDate= DateTime.Now;
+               
+        this.StateHasChanged();
+
+        nav.NavigateTo("/formulario/hospedagem");
+    }
+}

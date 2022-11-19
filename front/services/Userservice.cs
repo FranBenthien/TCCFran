@@ -61,4 +61,18 @@ public class UserService
         return content.Content;
         
     }
+    public async Task Formulario(
+        string VisitedCity,
+        DateTime ArrivalDate,            
+        DateTime DepartureDate)
+    {
+        FormularioDTO form = new FormularioDTO();
+        form.VisitedCity = VisitedCity;
+        form.ArrivalDate = ArrivalDate;        
+        form.DepartureDate = DepartureDate;
+        
+
+        var result = await client
+            .PostAsJsonAsync("/formulario/hospedagem", form);
+    }
 }
