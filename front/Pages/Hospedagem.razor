@@ -1,4 +1,4 @@
-@page "/hospedagem/{id}"
+@page "/formulario/hospedagem"
 
 @using Services;
 @using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
@@ -7,18 +7,46 @@
 @inject NavigationManager nav
 @inject ProtectedSessionStorage storage
 
-<button onclick="@Somar">Clica aqui também kkkk</button>
 
+<div class: "hospcontainer">
+    <p>
+        <h1>HOSPEDAGEM</h1>
+    </p>
 
-@id
+</div>
 
-@code
-{
-    [Parameter]
-    public string id { get; set; }
+<form>
+       <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de Hospedagem</label>
+        <select class="form-control" id="placename">
+            <option>Selecione uma opção</option>
+            <option>Hotel</option>
+            <option>Albergue</option>
+            <option>Pousada</option>
+            <option>AirBnb</option>
+            <option>Resort</option>
+            <option>Outros</option>
+    </select>
+  </div>
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Valor Gasto</label>
+        <textarea class="text" id="amountspent"></textarea>
+  </div>
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Nome do Local</label>
+        <textarea class="form-control" aria-label="Com textarea" id="typefood" rows="0"></textarea>
+  </div>
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Link para contato</label>
+        <textarea class="form-control" aria-label="Com textarea" id="link" rows="0"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Conte sua experiência / Curiosidades / Dicas</label>
+    <textarea class="form-control" id="comments" rows="3"></textarea>
+  </div>
+  <div class="botoes">
+    <button class="botao-volta" onclick="volta()">Voltar</button>
+    <button class="botao-avancar" onclick="avancar()">Avançar</button>   
+  </div>
+</form>
 
-    public void Somar()
-    {
-        nav.NavigateTo("/formulario/" + (int.Parse(id) + 1).ToString());
-    }
-}

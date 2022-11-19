@@ -1,0 +1,81 @@
+@page "/formulario/pontosturisticos"
+
+@using Services;
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+
+@inject UserService service
+@inject NavigationManager nav
+@inject ProtectedSessionStorage storage
+
+<div class: "turcontainer">
+    <p>
+        <h1>PONTOS TURÍSTICOS</h1>
+    </p>
+
+</div>
+
+<form>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de atração</label>
+    </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+        <label class="form-check-label" for="flexCheckDefault">Parque</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Praça</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Museu</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Teatro</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Centro Histórico</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Atrações Naturais</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Atrações religiosas</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Turismo rural</label>
+    </div>
+
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Valor Gasto</label>
+        <textarea class="text" id="amountspent"></textarea>
+  </div>
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de Trasnporte</label>
+        <select class="form-control" id="typetransport">
+            <option>Selecione uma opção</option>
+            <option>Carro próprio</option>
+            <option>Carro alugado</option>
+            <option>Ônibus</option>
+            <option>Uber</option>
+            <option>Taxi</option>
+            <option>Metrô</option>
+            <option>Bicicleta</option>
+            <option>Caminhando</option>
+            <option>Outros</option>
+        </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Conte sua experiência / Curiosidades / Dicas</label>
+    <textarea class="form-control" id="comments" rows="3"></textarea>
+  </div>
+  <div class="botoes">
+    <button class="botao-volta" onclick="volta()">Voltar</button>    
+  </div>
+</form>

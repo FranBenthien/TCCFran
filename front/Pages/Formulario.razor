@@ -7,3 +7,28 @@
 @inject NavigationManager nav
 @inject ProtectedSessionStorage storage
 
+<div class: "formcontainer">
+    <p>
+        <h1>Formulário para preencher com informações sobre sua viagem.</h1>
+        <h1>Por favor, preencha o formulario abaixo com o maior número de informações possível. 
+            Nos campos "Conte sua experiência" você pode fazer um relato livre sobre cada tema.</h1>
+    </p>
+</div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Cidade Visitada</label>
+        <select class="form-control" id="visitedcity">
+            <option>Selecione uma opção</option>
+            <option>Curitiba</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Data de Chegada</label>
+        <textarea class="date" id="arrivaldate" placeholder="00/00/0000"></textarea>
+    </div>
+     <div class="form-group">
+        <label for="exampleFormControlSelect1">Data de Retorno</label>
+        <textarea class="date" id="departuredate" placeholder="00/00/0000"></textarea>
+    </div>
+    <div class="botoes">    
+        <button class="botao-avancar" onclick="avancar()">Avançar</button>   
+    </div>

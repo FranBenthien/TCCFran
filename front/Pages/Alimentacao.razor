@@ -7,8 +7,15 @@
 @inject NavigationManager nav
 @inject ProtectedSessionStorage storage
 
+<div class: "alicontainer">
+    <p>
+        <h1>ALIMENTAÇÃO</h1>
+    </p>
+
+</div>
+
 <form>
-       <div class="form-group">
+  <div class="form-group">
         <label for="exampleFormControlSelect1">Tipo de Estabelecimento</label>
         <select class="form-control" id="placename">
             <option>Selecione uma opção</option>
@@ -19,18 +26,22 @@
             <option>Comida de rua</option>
             <option>Feira</option>
             <option>Outros</option>
-    </select>
+        </select>
   </div>
   <div class="form-group">
         <label for="exampleFormControlSelect1">Valor Gasto</label>
-        <textarea class="form-control" id="amountspent"></textarea>
+        <textarea class="text" id="amountspent"></textarea>
   </div>
   <div class="form-group">
         <label for="exampleFormControlSelect1">Tipo de comida servida</label>
-        <textarea class="form-control" id="typefood"></textarea>
+        <textarea class="form-control" aria-label="Com textarea" id="typefood"></textarea>
   </div>
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">Comentarios</label>
+    <label for="exampleFormControlTextarea1">Conte sua experiência / Curiosidades / Dicas</label>
     <textarea class="form-control" id="comments" rows="3"></textarea>
+  </div>
+  <div class="botoes">
+    <button class="botao-volta" onclick="volta()">Voltar</button>
+    <button class="botao-avancar" onclick="avancar()">Avançar</button>   
   </div>
 </form>
