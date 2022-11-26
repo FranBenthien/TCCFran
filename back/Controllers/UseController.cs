@@ -178,7 +178,7 @@ public class UserController : ControllerBase
 
         if (accom.Comments == null)
          {
-             errors.Add("Comentários sobre a viagem não adionados.");
+             errors.Add("Comentários sobre a viagem não adicionados.");
          }
 
 
