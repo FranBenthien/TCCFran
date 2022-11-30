@@ -30,27 +30,12 @@
         </p>
 
         <p>
-            <label>Cidade</label>
-            <input type="text" @bind-value="@city"/>
-        </p>
-
-        <p>
-            <label>Estado</label>
-            <input type="text" @bind-value="@state"/>
-        </p>
-
-        <p>
-            <label>País</label>
-            <input type="text" @bind-value="@country"/>
-        </p>
-
-        <p>
             <label>Nome de Usuario</label>
             <input type="text" @bind-value="@userId"/>
         </p>
 
         <button onclick="@CreateAccount">
-            Criar Conta
+            Cadastrar
         </button>
     </div>
    
@@ -62,10 +47,7 @@
     private string name;
     private string password;
     private string repeatpassword;
-    private string email;
-    private string city;
-    private string state;
-    private string country;
+    private string email;    
     private string userId;
     private string loginError;
 
@@ -74,23 +56,17 @@
         await service.Register(
             this.name, 
             this.userId,
-            this.email,
-            this.city,
-            this.state,
-            this.country,
+            this.email,            
             this.password);
 
         this.name = ""; 
         this.userId = "";
-        this.email = "";
-        this.city = "";
-        this.state = "";
-        this.country = "";
+        this.email = "";        
         this.password = "";
 
         this.StateHasChanged();
 
-        nav.NavigateTo("/usuario");
+        nav.NavigateTo("/");
 
     }
 

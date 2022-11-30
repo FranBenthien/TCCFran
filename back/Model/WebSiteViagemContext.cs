@@ -16,10 +16,7 @@ namespace back.Model
         {
         }
 
-        public virtual DbSet<Alimentacao> Alimentacaos { get; set; } = null!;
         public virtual DbSet<Formulario> Formularios { get; set; } = null!;
-        public virtual DbSet<Hospedagem> Hospedagems { get; set; } = null!;
-        public virtual DbSet<PontosTuristico> PontosTuristicos { get; set; } = null!;
         public virtual DbSet<Token> Tokens { get; set; } = null!;
         public virtual DbSet<Usuario> Usuarios { get; set; } = null!;
 
@@ -34,90 +31,66 @@ namespace back.Model
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Alimentacao>(entity =>
-            {
-                entity.ToTable("Alimentacao");
-
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.AmountSpent)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Comments)
-                    .HasMaxLength(1000)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.PlaceName)
-                    .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.TypeFood)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-            });
-
             modelBuilder.Entity<Formulario>(entity =>
             {
                 entity.ToTable("Formulario");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
+                entity.Property(e => e.Accommodation)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.ArrivalDate).HasColumnType("date");
 
-                entity.Property(e => e.DepartureDate).HasColumnType("date");
-
-                entity.Property(e => e.VisitedCity)
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
-            });
-
-            modelBuilder.Entity<Hospedagem>(entity =>
-            {
-                entity.ToTable("Hospedagem");
-
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.AmountSpent)
+                entity.Property(e => e.AttractionAmount)
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Comments)
                     .HasMaxLength(1000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.DepartureDate).HasColumnType("date");
+
+                entity.Property(e => e.Food)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FoodAmount)
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.HostingAmount)
+                    .HasMaxLength(20)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Link)
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.PlaceName)
-                    .HasMaxLength(100)
+                entity.Property(e => e.TypeAttraction)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.TypeFood)
+                    .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.TypeHosting)
-                    .HasMaxLength(50)
-                    .IsUnicode(false);
-            });
-
-            modelBuilder.Entity<PontosTuristico>(entity =>
-            {
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.AmountSpent)
-                    .HasMaxLength(20)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Comments)
-                    .HasMaxLength(1000)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.TypeAttraction)
-                    .HasMaxLength(50)
+                    .HasMaxLength(100)
                     .IsUnicode(false);
 
                 entity.Property(e => e.TypeTransport)
                     .HasMaxLength(50)
                     .IsUnicode(false);
+
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Formularios)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK__Formulari__UserI__29572725");
             });
 
             modelBuilder.Entity<Token>(entity =>
@@ -142,28 +115,12 @@ namespace back.Model
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
-                entity.Property(e => e.City)
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
-                
-                entity.Property(e => e.State)
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.Country)
-                    .HasMaxLength(30)
-                    .IsUnicode(false);
-
                 entity.Property(e => e.Email)
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Name)
                     .HasMaxLength(100)
-                    .IsUnicode(false);
-
-                entity.Property(e => e.State)
-                    .HasMaxLength(30)
                     .IsUnicode(false);
 
                 entity.Property(e => e.UserId)

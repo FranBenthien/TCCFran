@@ -12,15 +12,9 @@
         <h1>Formulário para preencher com informações sobre sua viagem.</h1>
         <h1>Por favor, preencha o formulario abaixo com o maior número de informações possível. 
             Nos campos "Conte sua experiência" você pode fazer um relato livre sobre cada tema.</h1>
+        <h1>Cidade Visitada: Curitiba</h1>
     </p>
 </div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Cidade Visitada</label>
-        <select class="form-control" id="VisitedCity">
-            <option>Selecione uma opção</option>
-            <option>Curitiba</option>
-        </select>
-    </div>
     <div class="form-group">
         <label for="exampleFormControlSelect1">Data de Chegada</label>
         <textarea class="date" id="ArrivalDate" placeholder="00/00/0000"></textarea>
@@ -29,29 +23,186 @@
         <label for="exampleFormControlSelect1">Data de Retorno</label>
         <textarea class="date" id="DepartureDate" placeholder="00/00/0000"></textarea>
     </div>
-    <div class="botoes">    
-        <button class="botao-avancar" onclick="createFormulario(/hospedagem)">Avançar</button>   
+    
+    <p>
+        <h1>HOSPEDAGEM</h1>
+    </p>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de Hospedagem</label>
+        <select class="form-control" id="placename">
+            <option>Selecione uma opção</option>
+            <option>Hotel</option>
+            <option>Albergue</option>
+            <option>Pousada</option>
+            <option>AirBnb</option>
+            <option>Resort</option>
+            <option>Outros</option>
+    </select>
+  </div>
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Valor Gasto</label>
+        <textarea class="text" id="amountspent"></textarea>
+  </div>
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Nome do Local</label>
+        <textarea class="form-control" aria-label="Com textarea" id="typefood" rows="0"></textarea>
+  </div>
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Link para contato</label>
+        <textarea class="form-control" aria-label="Com textarea" id="link" rows="0"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Conte sua experiência / Curiosidades / Dicas</label>
+    <textarea class="form-control" id="comments" rows="3"></textarea>
+  </div>
+ 
+    <p>
+        <h1>ALIMENTAÇÃO</h1>
+    </p>
+
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de Estabelecimento</label>
+        <select class="form-control" id="placename">
+            <option>Selecione uma opção</option>
+            <option>Restaurante</option>
+            <option>Lanchonete</option>
+            <option>Panificadora/Padaria</option>
+            <option>Bar</option>
+            <option>Comida de rua</option>
+            <option>Feira</option>
+            <option>Outros</option>
+        </select>
+  </div>
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Valor Gasto</label>
+        <textarea class="text" id="amountspent"></textarea>
+  </div>
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de comida servida</label>
+        <textarea class="form-control" aria-label="Com textarea" id="typefood"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Conte sua experiência / Curiosidades / Dicas</label>
+    <textarea class="form-control" id="comments" rows="3"></textarea>
+  </div>
+  
+    <p>
+        <h1>PONTOS TURÍSTICOS</h1>
+    </p>
+
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de atração</label>
     </div>
+
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+        <label class="form-check-label" for="flexCheckDefault">Parque</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Praça</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Museu</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Teatro</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Centro Histórico</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Atrações Naturais</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Atrações religiosas</label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
+         <label class="form-check-label" for="flexCheckChecked">Turismo rural</label>
+    </div>
+
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Valor Gasto</label>
+        <textarea class="text" id="amountspent"></textarea>
+  </div>
+  <div class="form-group">
+        <label for="exampleFormControlSelect1">Tipo de Trasnporte</label>
+        <select class="form-control" id="typetransport">
+            <option>Selecione uma opção</option>
+            <option>Carro próprio</option>
+            <option>Carro alugado</option>
+            <option>Ônibus</option>
+            <option>Uber</option>
+            <option>Taxi</option>
+            <option>Metrô</option>
+            <option>Bicicleta</option>
+            <option>Caminhando</option>
+            <option>Outros</option>
+        </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Conte sua experiência / Curiosidades / Dicas</label>
+    <textarea class="form-control" id="comments" rows="3"></textarea>
+  </div>
+  <div class="botoes">
+    <button class="botao-volta" onclick="volta()">Salvar</button>    
+  </div>
+
+
 
 @code
 {
-    private string VisitedCity;
     private DateTime ArrivalDate;
     private DateTime DepartureDate;
+    private string TypeHosting;
+    private string Accommodation;
+    private string Link;
+    private string Food;
+    private string FoodAmount;
+    private string TypeFood;
+    private string TypeAttraction;
+    private string AttractionAmount;
+    private string TypeTransport;
+    private string Comments;
     
     public async void createFormulario()
     {    
-        await service.Formulario(
-            this.VisitedCity,
+        await service.Formulario(            
             this.ArrivalDate,
-            this.DepartureDate);
+            this.DepartureDate,            
+            this.TypeHosting,
+            this.Accommodation,
+            this.Link,
+            this.Food,
+            this.FoodAmount,
+            this.TypeFood,
+            this.TypeAttraction,
+            this.AttractionAmount,
+            this.TypeTransport,
+            this.Comments);
 
-        this.VisitedCity= "";
         this.ArrivalDate= DateTime.Now;
         this.DepartureDate= DateTime.Now;
+        this.TypeHosting = "";
+        this.Accommodation = "";
+        this.Link = "";
+        this.Food = "";
+        this.FoodAmount = "";
+        this.TypeFood = "";
+        this.TypeAttraction = "";
+        this.AttractionAmount = "";
+        this.TypeTransport = "";
+        this.Comments= "";
                
         this.StateHasChanged();
 
-        nav.NavigateTo("/formulario/hospedagem");
+        nav.NavigateTo("/formulario");
     }
 }

@@ -55,22 +55,7 @@ public class UserController : ControllerBase
         {
              errors.Add("Email não foi informado");
         }
-
-        if (user.City == null)
-        {
-             errors.Add("Cidade não foi informado");
-        }
-
-        if (user.State == null)
-        {
-             errors.Add("Estado não foi informado");
-        }
-
-        if (user.Country == null)
-        {
-             errors.Add("País não foi informado");
-        }
-              
+                     
         if(user.Name.Length < 5)
         {
              errors.Add("O nome do usuário precisa conter ao menos 5 letras.");
@@ -89,10 +74,7 @@ public class UserController : ControllerBase
 
         Usuario usuario = new Usuario();
         usuario.Name = user.Name;
-        usuario.Email = user.Email;
-        usuario.City = user.City;
-        usuario.State = user.State;
-        usuario.Country = user.Country;
+        usuario.Email = user.Email;        
         usuario.UserId = user.UserId;
         usuario.Userpass = user.Password;                  
 
@@ -119,11 +101,6 @@ public class UserController : ControllerBase
 
         List<string> errors = new List<string>();
 
-        //  if (form.VisitedCity == null)
-        //  {
-        //      errors.Add("Cidade não informada");
-        //  }
-
         if (form.ArrivalDate == null)
         {
              errors.Add("Data não informada");
@@ -135,67 +112,26 @@ public class UserController : ControllerBase
         }
 
 
-        Formulario formulario = new Formulario();
-        formulario.VisitedCity = form.VisitedCity;
+        Formulario formulario = new Formulario();   
         formulario.ArrivalDate = form.ArrivalDate.Value;
         formulario.DepartureDate = form.DepartureDate.Value;
-                  
+        formulario.TypeHosting = form.TypeHosting;
+        formulario.Accommodation = form.Accommodation;
+        formulario.Link = form.Link;
+        formulario.Food = form.Food;
+        formulario.FoodAmount = form.FoodAmount;
+        formulario.TypeFood = form.TypeFood;
+        formulario.TypeAttraction = form.TypeAttraction;
+        formulario.AttractionAmount = form.AttractionAmount;
+        formulario.TypeTransport = form.TypeTransport;
+        formulario.Comments = form.Comments;
+   
+                     
         context.Add(formulario);
         context.SaveChanges();
 
         return Ok();
         
     }
-
-    [HttpPost("hospedagem")]
-    public IActionResult Hospedagem(
-        [FromBody]HospedagemDTO accom
-        )
-    {
-        using WebSiteViagemContext context = new WebSiteViagemContext();
-
-        List<string> errors = new List<string>();
-
-        if (accom.TypeHosting == null)
-         {
-             errors.Add("Tipo de hospedagem não selecionada");
-         }
-
-        if (accom.AmountSpent == null)
-         {
-             errors.Add("Valor gasto não informado.");
-         }
-
-        if (accom.PlaceName == null)
-         {
-             errors.Add("Nome do local em que ficou hospedado não informado.");
-         }
-        
-        if (accom.Link == null)
-         {
-             errors.Add("Nome do local em que ficou hospedado não informado.");
-         }
-
-        if (accom.Comments == null)
-         {
-             errors.Add("Comentários sobre a viagem não adicionados.");
-         }
-
-
-        Hospedagem hospedagem = new Hospedagem();
-        hospedagem.TypeHosting = accom.TypeHosting;
-        hospedagem.AmountSpent = accom.AmountSpent;
-        hospedagem.PlaceName = accom.PlaceName;
-        hospedagem.Link = accom.Link;
-        hospedagem.Comments = accom.Comments;
-                  
-        context.Add(hospedagem);
-        context.SaveChanges();
-
-        return Ok();
-        
-    }
-
-
 
 }

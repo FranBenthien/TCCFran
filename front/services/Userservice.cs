@@ -18,10 +18,7 @@ public class UserService
     public async Task Register(
         string name,
         string userId,
-        string Email,
-        string City,
-        string State,
-        string Country,        
+        string Email,               
         string password)
     {
         UsuarioDTO user = new UsuarioDTO();
@@ -29,11 +26,7 @@ public class UserService
         user.UserId = userId;
         user.Password = password;
         user.Email = Email;
-        user.City = City;
-        user.State = State;
-        user.Country = Country;
         
-
         var result = await client
             .PostAsJsonAsync("user/register", user);
     }
@@ -61,18 +54,37 @@ public class UserService
         return content.Content;
         
     }
-    public async Task Formulario(
-        string VisitedCity,
+    public async Task Formulario(        
         DateTime ArrivalDate,            
-        DateTime DepartureDate)
+        DateTime DepartureDate,     
+        string TypeHosting,
+        string Accommodation,
+        string Link,
+        string Food,
+        string FoodAmount,
+        string TypeFood,
+        string TypeAttraction,
+        string AttractionAmount,
+        string TypeTransport,
+        string Comments)
+        
     {
-        FormularioDTO form = new FormularioDTO();
-        form.VisitedCity = VisitedCity;
+        FormularioDTO form = new FormularioDTO();        
         form.ArrivalDate = ArrivalDate;        
         form.DepartureDate = DepartureDate;
+        form.TypeHosting = TypeHosting;
+        form.Accommodation = Accommodation;
+        form.Link = Link;
+        form.Food = Food;
+        form.FoodAmount = FoodAmount;
+        form.TypeFood = TypeFood;
+        form.TypeAttraction = TypeAttraction;
+        form.AttractionAmount = AttractionAmount;
+        form.TypeTransport = TypeTransport;
+        form.Comments = Comments;
         
 
         var result = await client
-            .PostAsJsonAsync("/formulario/hospedagem", form);
+            .PostAsJsonAsync("/formulario", form);
     }
 }
