@@ -20,6 +20,7 @@ namespace back.Model
         public string AttractionAmount { get; set; } = null!;
         public string TypeTransport { get; set; } = null!;
         public string Comments { get; set; } = null!;
+
         public virtual Usuario? User { get; set; }
     }
 }

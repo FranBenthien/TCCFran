@@ -1,33 +1,39 @@
-html,
-body {
-  height: 100%;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} 
+body{
+  background: rgb(153, 172, 172);
 }
+.row{
+  background: rgb(254, 254, 254);
+  border-radius: 10px;
 
-body {
+}
+img{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.btn1{
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  font-weight: bold;
+}
+.btn1:hover{
+  background: white;
+  border: 1px solid;
+  color: black;
+}
+.photo-container {
   display: flex;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  background-color: #f5f5f5;
-}
-
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-}
-
-.form-signin .form-floating:focus-within {
-  z-index: 2;
-}
-
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  justify-content: space-around;
+  flex-direction: column;
 }

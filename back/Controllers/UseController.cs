@@ -61,12 +61,6 @@ public class UserController : ControllerBase
              errors.Add("O nome do usuário precisa conter ao menos 5 letras.");
         }
 
-        if (context.Usuarios
-            .Any(u => u.UserId == user.UserId))
-        {
-            errors.Add("Seu nome de usuário já está em uso!");
-        }
-
         if (errors.Count > 0)
         {
              return this.BadRequest(errors);
@@ -74,8 +68,7 @@ public class UserController : ControllerBase
 
         Usuario usuario = new Usuario();
         usuario.Name = user.Name;
-        usuario.Email = user.Email;        
-        usuario.UserId = user.UserId;
+        usuario.Email = user.Email;       
         usuario.Userpass = user.Password;                  
 
         context.Add(usuario);

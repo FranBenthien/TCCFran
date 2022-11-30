@@ -14,7 +14,6 @@ namespace back.Model
         public int Id { get; set; }
         public string Name { get; set; } = null!;
         public string Email { get; set; } = null!;
-        public string UserId { get; set; } = null!;
         public string Userpass { get; set; } = null!;
 
         public virtual ICollection<Formulario> Formularios { get; set; }

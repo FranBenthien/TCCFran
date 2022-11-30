@@ -123,11 +123,6 @@ namespace back.Model
                     .HasMaxLength(100)
                     .IsUnicode(false);
 
-                entity.Property(e => e.UserId)
-                    .HasMaxLength(60)
-                    .IsUnicode(false)
-                    .HasColumnName("UserID");
-
                 entity.Property(e => e.Userpass).IsUnicode(false);
             });
 
