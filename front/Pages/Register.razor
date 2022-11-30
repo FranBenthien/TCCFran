@@ -7,39 +7,130 @@
 @inject NavigationManager nav
 @inject ProtectedSessionStorage storage
 
-<div class="regcontainer">
-    <div class="registercontainer">
-        <p>
-            <label>Nome Completo</label>
-            <input type="text" @bind-value="@name"/>
-        </p>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Signin Template · Bootstrap v5.2</title>
 
-        <p>
-            <label>Senha</label>
-            <input type="password" @bind-value="@password"/>
-        </p>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
 
-        <p>
-            <label>Repetir Senha</label>
-            <input type="password" @bind-value="@repeatpassword"/>
-        </p>
+    
 
-        <p>
-            <label>Email</label>
-            <input type="text" @bind-value="@email"/>
-        </p>
+<link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-        <p>
-            <label>Nome de Usuario</label>
-            <input type="text" @bind-value="@userId"/>
-        </p>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-        <button onclick="@CreateAccount">
-            Cadastrar
-        </button>
+      .media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+      .btn1{
+            border: none;
+            outline: none;
+            height: 50px;
+            width: 100%;
+            background-color: black;
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+    
+        }
+        .btn1:hover{
+            background: white;
+            border: 1px solid;
+            color: black;
+        }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+<main class="form-signin w-100 m-auto">
+  <form>
+    <img class="mb-4" src="img/curitibandoLogoPreto.png" alt="" width="182" height="110">
+    <h1 class="h3 fw-normal">Cadastre-se</h1>
+
+    <div class="form-row">
+        <label>
+            <input type="nome" placeholder="Nome completo"class="form-control mt-3 mb-3">
+        </label>
     </div>
-   
-</div>
+    <div class="form-row">
+        <label>
+            <input type="e-mail" placeholder="Email"class="form-control mb-3">
+        </label>
+    </div>
+    <div class="form-row">
+        <label>
+            <input type="******" placeholder="Senha"class="form-control mb-3">
+        </label>
+    </div>
+    <div class="form-row">
+        <label>
+            <input type="******" placeholder="Confirmar senha"class="form-control mb-3">
+        </label>
+    </div>
+    <div class="form-row">
+        <label class="col-lg-7">
+            <button type="button" class="btn1 mt-3 mb-5">Cadastrar</button>
+        </label>
+    </div>
+  </form>
+</main>
+    
+  </body>
+  </html>
 
 
 @code 
@@ -66,7 +157,7 @@
 
         this.StateHasChanged();
 
-        nav.NavigateTo("/");
+        nav.NavigateTo("/login");
 
     }
 

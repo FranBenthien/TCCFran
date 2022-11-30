@@ -20,6 +20,7 @@ public class UserService
         string userId,
         string Email,               
         string password)
+
     {
         UsuarioDTO user = new UsuarioDTO();
         user.Name = name;
@@ -33,8 +34,8 @@ public class UserService
 
     public async Task<string> Login(
         string email,
-        string password
-    )
+        string password)
+
     {
         UsuarioDTO user = new UsuarioDTO();
         user.Email = email;
@@ -85,6 +86,6 @@ public class UserService
         
 
         var result = await client
-            .PostAsJsonAsync("/formulario", form);
+            .PostAsJsonAsync("form/formulario", form);
     }
 }
