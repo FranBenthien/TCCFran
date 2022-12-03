@@ -58,30 +58,40 @@ public class UserService
         DateTime ArrivalDate,            
         DateTime DepartureDate,     
         string TypeHosting,
+        string HostingAmount,
         string Accommodation,
         string Link,
+        string HostingComments,
         string Food,
         string FoodAmount,
         string TypeFood,
+        string FoodPlaceName,
+        string LinkFood,
+        string FoodComments,
         string TypeAttraction,
         string AttractionAmount,
         string TypeTransport,
-        string Comments)
+        string AttractionComments)
         
     {
         FormularioDTO form = new FormularioDTO();        
         form.ArrivalDate = ArrivalDate;        
         form.DepartureDate = DepartureDate;
         form.TypeHosting = TypeHosting;
+        form.HostingAmount = HostingAmount;
         form.Accommodation = Accommodation;
         form.Link = Link;
+        form.HostingComments = HostingComments;
         form.Food = Food;
         form.FoodAmount = FoodAmount;
         form.TypeFood = TypeFood;
+        form.FoodPlaceName = FoodPlaceName;
+        form.LinkFood = LinkFood;
+        form.FoodComments = FoodComments;
         form.TypeAttraction = TypeAttraction;
         form.AttractionAmount = AttractionAmount;
         form.TypeTransport = TypeTransport;
-        form.Comments = Comments;
+        form.AttractionComments = AttractionComments;
         
 
         var result = await client

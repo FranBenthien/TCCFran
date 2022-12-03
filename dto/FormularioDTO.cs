@@ -9,12 +9,16 @@ public class FormularioDTO
     public string? HostingAmount { get; set; }
     public string? Accommodation { get; set; } 
     public string? Link { get; set; }
+    public string? HostingComments { get; set; }
     public string? Food { get; set; }
     public string? FoodAmount { get; set; }
-    public string? TypeFood { get; set; } 
+    public string? TypeFood { get; set; }
+    public string? FoodPlaceName { get; set; }
+    public string? LinkFood { get; set; }
+    public string? FoodComments { get; set; } 
     public string? TypeAttraction { get; set; } 
     public string? AttractionAmount { get; set; } 
     public string? TypeTransport { get; set; } 
-    public string? Comments { get; set; } 
+    public string? AttractionComments { get; set; } 
         
 }

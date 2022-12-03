@@ -7,154 +7,187 @@
 @inject NavigationManager nav
 @inject ProtectedSessionStorage storage
 
-<div class: "formcontainer">
-    <p>
-        <h1>Formulário para preencher com informações sobre sua viagem.</h1>
-        <h1>Por favor, preencha o formulario abaixo com o maior número de informações possível. 
-            Nos campos "Conte sua experiência" você pode fazer um relato livre sobre cada tema.</h1>
-        <h1>Cidade Visitada: Curitiba</h1>
-    </p>
-</div>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Data de Chegada</label>
-        <textarea class="date" id="ArrivalDate" placeholder="00/00/0000"></textarea>
-    </div>
-     <div class="form-group">
-        <label for="exampleFormControlSelect1">Data de Retorno</label>
-        <textarea class="date" id="DepartureDate" placeholder="00/00/0000"></textarea>
-    </div>
-    
-    <p>
-        <h1>HOSPEDAGEM</h1>
-    </p>
-
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Tipo de Hospedagem</label>
-        <select class="form-control" id="placename">
-            <option>Selecione uma opção</option>
-            <option>Hotel</option>
-            <option>Albergue</option>
-            <option>Pousada</option>
-            <option>AirBnb</option>
-            <option>Resort</option>
-            <option>Outros</option>
-    </select>
-  </div>
-  <div class="form-group">
-        <label for="exampleFormControlSelect1">Valor Gasto</label>
-        <textarea class="text" id="amountspent"></textarea>
-  </div>
-  <div class="form-group">
-        <label for="exampleFormControlSelect1">Nome do Local</label>
-        <textarea class="form-control" aria-label="Com textarea" id="typefood" rows="0"></textarea>
-  </div>
-  <div class="form-group">
-        <label for="exampleFormControlSelect1">Link para contato</label>
-        <textarea class="form-control" aria-label="Com textarea" id="link" rows="0"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Conte sua experiência / Curiosidades / Dicas</label>
-    <textarea class="form-control" id="comments" rows="3"></textarea>
-  </div>
+<div class="container">
+    <div class="py-5 text-center">
+        <img class="d-block mx-auto mb-4" src="img/curitibandoLogoPreto.png" alt="" width="282" height="200">
+        <h2>Registre sua viagem</h2>
+        <p class="lead">Preencha o formulário e enriqueça esse site para que os próximos visitantes possam aproveitar suas dicas e recomendações.</p>
+    </div> 
+</div> 
  
-    <p>
-        <h1>ALIMENTAÇÃO</h1>
-    </p>
+<div class="form-group">
+        <label>Data de Chegada:</label>
+        <input type="date" @bind-value="@ArrivalDate" placeholder="00/00/0000"></input>
+</div>
+<div class="form-group">
+        <label>Data de Retorno:</label>
+        <input type="date" @bind-value="@DepartureDate" placeholder="00/00/0000"></input>
+</div>
+                 
+<div>
+    <h4 class="mb-3">Hospedagem</h4>
+    <form class="needs-validation" novalidate>
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <label for="tipoHospedagem" class="form-label">Tipo de hospedagem:</label>
+                <select class="form-select" id="country" required>
+                <option value="">Escolha...</option>
+                <option>Hotel</option>
+                <option>Albergue</option>
+                <option>Pousada</option>
+                <option>AirBnb</option>
+                <option>Resort</option>
+                <option>Outros</option>
+                </select>>
+            </div>
+        </div>
+    </form>
+</div>
 
-  <div class="form-group">
-        <label for="exampleFormControlSelect1">Tipo de Estabelecimento</label>
-        <select class="form-control" id="placename">
-            <option>Selecione uma opção</option>
-            <option>Restaurante</option>
-            <option>Lanchonete</option>
-            <option>Panificadora/Padaria</option>
-            <option>Bar</option>
-            <option>Comida de rua</option>
-            <option>Feira</option>
-            <option>Outros</option>
-        </select>
-  </div>
-  <div class="form-group">
-        <label for="exampleFormControlSelect1">Valor Gasto</label>
-        <textarea class="text" id="amountspent"></textarea>
-  </div>
-  <div class="form-group">
-        <label for="exampleFormControlSelect1">Tipo de comida servida</label>
-        <textarea class="form-control" aria-label="Com textarea" id="typefood"></textarea>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Conte sua experiência / Curiosidades / Dicas</label>
-    <textarea class="form-control" id="comments" rows="3"></textarea>
-  </div>
-  
-    <p>
-        <h1>PONTOS TURÍSTICOS</h1>
-    </p>
 
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Tipo de atração</label>
-    </div>
+<div class="col-sm-6">
+    <label for="valorGasto" class="form-label">Valor gasto:</label>
+    <input type="text" @bind-value="@HostingAmount" class="form-control" id="valorGasto" placeholder="Digite o valor gasto em sua estadia.">   
+</div>
 
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
-        <label class="form-check-label" for="flexCheckDefault">Parque</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
-         <label class="form-check-label" for="flexCheckChecked">Praça</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
-         <label class="form-check-label" for="flexCheckChecked">Museu</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
-         <label class="form-check-label" for="flexCheckChecked">Teatro</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
-         <label class="form-check-label" for="flexCheckChecked">Centro Histórico</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
-         <label class="form-check-label" for="flexCheckChecked">Atrações Naturais</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
-         <label class="form-check-label" for="flexCheckChecked">Atrações religiosas</label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="typeattraction" />
-         <label class="form-check-label" for="flexCheckChecked">Turismo rural</label>
-    </div>
+<div class="col-sm-6">
+    <label for="nomeLocal" class="form-label">Nome do estabelecimento:</label>
+    <input type="text" @bind-value="@Accommodation" class="form-control" id="nomeLocal" placeholder="Digite o nome do local de hospedagem.">
+</div>
 
-  <div class="form-group">
-        <label for="exampleFormControlSelect1">Valor Gasto</label>
-        <textarea class="text" id="amountspent"></textarea>
-  </div>
-  <div class="form-group">
-        <label for="exampleFormControlSelect1">Tipo de Trasnporte</label>
-        <select class="form-control" id="typetransport">
-            <option>Selecione uma opção</option>
-            <option>Carro próprio</option>
-            <option>Carro alugado</option>
-            <option>Ônibus</option>
-            <option>Uber</option>
-            <option>Taxi</option>
-            <option>Metrô</option>
-            <option>Bicicleta</option>
-            <option>Caminhando</option>
-            <option>Outros</option>
-        </select>
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Conte sua experiência / Curiosidades / Dicas</label>
-    <textarea class="form-control" id="comments" rows="3"></textarea>
-  </div>
-  <div class="botoes">
-    <button class="botao-volta" onclick="volta()">Salvar</button>    
-  </div>
+<div class="col-sm-6">
+    <label for="linkContato" class="form-label">Link para contato:</label>
+    <input type="text" @bind-value="@Link" class="form-control" id="linkContato" placeholder="Adicione o link para contato com o local de hospedagem.">      
+</div>
 
+<div class="col-12">
+    <label for="relatoAlim" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
+    <input type="text" @bind-value="@HostingComments" class="form-control" id="comments" rows="3">
+</div>
+            
+
+<div>
+    <h4 class="mt-3 mb-3">Alimentação</h4>
+    <form class="needs-validation" novalidate>
+        <div class="row g-3">
+            <div class="col-sm-6">
+                <label for="tipoEstabelecimento" class="form-label">Tipo de estabelecimento:</label>
+                <select class="form-select" id="tipoEstabelecimento" required>
+                  <option value="">Escolha...</option>
+                  <option>Restaurante</option>
+                  <option>Lanchonete</option>
+                  <option>Panificadora/Padaria</option>
+                  <option>Bar</option>
+                  <option>Comida de rua</option>
+                  <option>Feira</option>
+                  <option>Outro</option>
+                </select>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="col-sm-6">
+    <label for="valorGastoAlim" class="form-label">Valor gasto:</label>
+    <input type="text" @bind-value="@FoodAmount" class="form-control" id="valorGasto" placeholder="Digite o valor gasto no estabelecimento.">   
+</div>
+
+<div class="col-sm-6">
+    <label for="tipodecomida" class="form-label">Tipo de comida consumida:</label>
+    <input type="text" @bind-value="@TypeFood" class="form-control" id="nomeLocal" placeholder="Digite o tipo de comida consumida.">
+</div>
+
+<div class="col-sm-6">
+    <label for="nomeLocal" class="form-label">Nome do estabelecimento:</label>
+    <input type="text" @bind-value="@FoodPlaceName" class="form-control" id="nomeLocal" placeholder="Digite o nome do estabelecimento.">
+</div>
+
+<div class="col-sm-6">
+        <label for="linkContato" class="form-label">Link para contato:</label>
+        <input type="text" @bind-value="@LinkFood" class="form-control" id="linkContato" placeholder="Adicione o link para contato com o estabelecimento.">         
+</div>
+
+<div class="col-12">
+    <label for="relatoAlim" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
+    <input type="text" @bind-value="@FoodComments" class="form-control" id="comments" rows="3">    
+</div>
+
+
+<div>
+    <h4 class="mt-3 mb-3">Pontos Turísticos</h4>
+        <form class="needs-validation" novalidate>
+            <div class="row g-3">
+                <div class="col-sm-6">
+                <label for="tipoAtracao" class="form-label">Tipos de atração:</label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Parque</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Praça</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Museu</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">Teatro</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                    <label class="form-check-label" for="inlineCheckbox5">Centro histórico</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                    <label class="form-check-label" for="inlineCheckbox6">Atrações naturais</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                    <label class="form-check-label" for="inlineCheckbox7">Atrações religiosas</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
+                    <label class="form-check-label" for="inlineCheckbox8">Turismo rural</label>                
+                </div>
+                </div>
+            </div>
+        </form>
+</div>    
+
+<div class="col-sm-6">
+    <label for="valorGastoTur" class="form-label">Valor gasto:</label>
+    <input type="text" @bind-value="@AttractionAmount" class="form-control" id="valorGasto" placeholder="Digite o valor gasto com passeios ou entradas.">   
+</div>
+
+<div class="col-sm-6">
+    <label for="tipoTranporte" class="form-label">Tipo de transporte:</label>
+    <select class="form-select" id="tipoTransporte" required>
+        <option value="">Escolha...</option>
+        <option>Carro próprio</option>
+        <option>Carro alugado</option>
+        <option>Ônibus</option>
+        <option>Uber</option>
+        <option>Taxi</option>
+        <option>Metrô</option>
+        <option>Bicicleta</option>
+        <option>Caminhando</option>
+        <option>Outro</option>
+    </select>
+</div>
+
+<div class="col-12">
+    <label for="relatoTur" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
+    <input type="text" @bind-value="@AttractionComments" class="form-control" id="comments" rows="3">
+</div>
+
+
+<div class="botoes">
+    <button onclick="@createFormulario">
+        Salvar
+    </button>    
+</div>
 
 
 @code
@@ -162,15 +195,20 @@
     private DateTime ArrivalDate;
     private DateTime DepartureDate;
     private string TypeHosting;
+    private string HostingAmount;
     private string Accommodation;
     private string Link;
+    private string HostingComments;
     private string Food;
     private string FoodAmount;
     private string TypeFood;
+    private string FoodPlaceName;
+    private string LinkFood;
+    private string FoodComments;
     private string TypeAttraction;
     private string AttractionAmount;
     private string TypeTransport;
-    private string Comments;
+    private string AttractionComments;
     
     public async void createFormulario()
     {    
@@ -178,28 +216,38 @@
             this.ArrivalDate,
             this.DepartureDate,            
             this.TypeHosting,
+            this.HostingAmount,
             this.Accommodation,
             this.Link,
+            this.HostingComments,
             this.Food,
             this.FoodAmount,
             this.TypeFood,
+            this.FoodPlaceName,
+            this.LinkFood,
+            this.FoodComments,
             this.TypeAttraction,
             this.AttractionAmount,
             this.TypeTransport,
-            this.Comments);
+            this.AttractionComments);
 
         this.ArrivalDate= DateTime.Now;
         this.DepartureDate= DateTime.Now;
         this.TypeHosting = "";
+        this.HostingAmount = "";
         this.Accommodation = "";
         this.Link = "";
+        this.HostingComments = "";
         this.Food = "";
         this.FoodAmount = "";
         this.TypeFood = "";
+        this.FoodPlaceName = "";
+        this.LinkFood = "";
+        this.FoodComments ="";
         this.TypeAttraction = "";
         this.AttractionAmount = "";
         this.TypeTransport = "";
-        this.Comments= "";
+        this.AttractionComments= "";
                
         this.StateHasChanged();
 

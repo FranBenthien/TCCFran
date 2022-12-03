@@ -47,7 +47,7 @@ namespace back.Model
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Comments)
+                entity.Property(e => e.AttractionComments)
                     .HasMaxLength(1000)
                     .IsUnicode(false);
 
@@ -61,11 +61,27 @@ namespace back.Model
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
+                entity.Property(e => e.FoodComments)
+                    .HasMaxLength(1000)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.FoodPlaceName)
+                    .HasMaxLength(100)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.HostingAmount)
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
+                entity.Property(e => e.HostingComments)
+                    .HasMaxLength(1000)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Link)
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.LinkFood)
                     .HasMaxLength(50)
                     .IsUnicode(false);
 

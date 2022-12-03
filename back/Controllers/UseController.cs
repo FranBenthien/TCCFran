@@ -109,15 +109,20 @@ public class UserController : ControllerBase
         formulario.ArrivalDate = form.ArrivalDate.Value;
         formulario.DepartureDate = form.DepartureDate.Value;
         formulario.TypeHosting = form.TypeHosting;
+        formulario.HostingAmount = form.HostingAmount;
         formulario.Accommodation = form.Accommodation;
         formulario.Link = form.Link;
+        formulario.HostingComments = form.HostingComments;
         formulario.Food = form.Food;
         formulario.FoodAmount = form.FoodAmount;
         formulario.TypeFood = form.TypeFood;
+        formulario.FoodPlaceName = form.FoodPlaceName;
+        formulario.LinkFood = form.LinkFood;
+        formulario.FoodComments = form.FoodComments;
         formulario.TypeAttraction = form.TypeAttraction;
         formulario.AttractionAmount = form.AttractionAmount;
         formulario.TypeTransport = form.TypeTransport;
-        formulario.Comments = form.Comments;
+        formulario.AttractionComments = form.AttractionComments;
    
                      
         context.Add(formulario);
