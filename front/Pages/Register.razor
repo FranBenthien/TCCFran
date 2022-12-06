@@ -36,7 +36,7 @@
       </div>
       
       <div class="form-row">   
-      <button onclick="@CreateAccount">
+      <button @onclick="CreateAccount">
                 Cadastrar
       </button>
       </div>
@@ -60,11 +60,10 @@
             this.name,             
             this.email,            
             this.password);
-
+            
         this.name = "";         
         this.email = "";        
         this.password = "";
-
         this.StateHasChanged();
 
         nav.NavigateTo("/login");

@@ -5,7 +5,7 @@ using front.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 
-string server = "https://localhost:7247";
+string server = "https://localhost:7243";
 
 //if(builder.Environment.IsProduction())
 //{

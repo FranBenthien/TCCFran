@@ -1,13 +1,12 @@
 @page "/login"
 
 @using Services;
+@using System.Reflection;
 @using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
 
 @inject UserService service
 @inject NavigationManager nav
 @inject ProtectedSessionStorage storage
-
-
 
 <body>    
     <section class="box-container Form my-4 mx-5">
@@ -63,9 +62,23 @@
     private string userId;
     private string loginError;
 
+    private JSRuntime runtime = null;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender)
+            return;
+        
+        foreach (var prop in typeof(ProtectedBrowserStorage).GetRuntimeFields())
+        {
+            if (prop.Name == "_jsRuntime")
+            {
+                runtime = prop.GetValue(storage) as JSRuntime;
+            }
+        }
+    }
+
     public async void UserLogin()
     {
-        
         var result = await service.Login(
             this.email,
             this.password
@@ -83,3 +96,8 @@
         nav.NavigateTo("/");
     }
 }
+
+
+
+
+

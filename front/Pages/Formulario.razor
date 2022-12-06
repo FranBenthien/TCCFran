@@ -163,7 +163,7 @@
 
     <div class="col-sm-6">
         <label for="tipoTranporte" class="form-label">Tipo de transporte:</label>
-        <select class="form-select" id="tipoTransporte" required>
+        <select class="form-select" id="tipoTransporte"  required>
             <option value="">Slecione uma opção...</option>
             <option>Carro próprio</option>
             <option>Carro alugado</option>
@@ -177,12 +177,39 @@
         </select>
     </div>
 
+    <div>
+    @for(int i = 0; i < TypeTransport.SelectedDiagnosisIdList.Count; i++)
+      {
+        int local = i;
+        <select id=$"dropdown{local+1}" 
+               @bind="@TypeTransport.SelectedDiagnosisIdList[local]">
+            @foreach (var item in Formulario)
+            {
+                <option value="@item.Id">@item.Name</option>
+                <option>Carro próprio</option>
+                <option>Carro alugado</option>
+                <option>Ônibus</option>
+                <option>Uber</option>
+                <option>Taxi</option>
+                <option>Metrô</option>
+                <option>Bicicleta</option>
+                <option>Caminhando</option>
+                <option>Outro</option>
+            }
+        </select>
+        <p>@TypeTransport.SelectedDiagnosisIdList[local]</p>
+    }
+    </div>
+
+
+
+
     <div class="col-12">
         <label for="relatoTur" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
         <input type="text" @bind-value="@AttractionComments" class="form-control" id="comments" rows="3">
     </div>
 
-    <button onclick="@createFormulario">
+    <button @onclick="createFormulario">
         Salvar
     </button> 
 
