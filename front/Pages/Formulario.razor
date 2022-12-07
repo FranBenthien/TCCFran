@@ -26,11 +26,11 @@
                  
     <div>
     <h4 class="mb-3">Hospedagem</h4>
-    <form class="needs-validation" novalidate>
+    <form class="needs-validation">
         <div class="row g-3">
             <div class="col-sm-6">
                 <label for="tipoHospedagem" class="form-label">Tipo de hospedagem:</label>
-                <select class="form-select" id="country" required>
+                <input type="text" @bind-value="@TypeHosting" id="country" required>
                 <option value="">Selecione uma opção...</option>
                 <option>Hotel</option>
                 <option>Albergue</option>
@@ -38,7 +38,8 @@
                 <option>AirBnb</option>
                 <option>Resort</option>
                 <option>Outros</option>
-                </select>>
+
+                </input>>
             </div>
         </div>
     </form>
@@ -164,7 +165,7 @@
     <div class="col-sm-6">
         <label for="tipoTranporte" class="form-label">Tipo de transporte:</label>
         <select class="form-select" id="tipoTransporte"  required>
-            <option value="">Slecione uma opção...</option>
+            <option value="">Selecione uma opção...</option>
             <option>Carro próprio</option>
             <option>Carro alugado</option>
             <option>Ônibus</option>
@@ -177,29 +178,7 @@
         </select>
     </div>
 
-    <div>
-    @for(int i = 0; i < TypeTransport.SelectedDiagnosisIdList.Count; i++)
-      {
-        int local = i;
-        <select id=$"dropdown{local+1}" 
-               @bind="@TypeTransport.SelectedDiagnosisIdList[local]">
-            @foreach (var item in Formulario)
-            {
-                <option value="@item.Id">@item.Name</option>
-                <option>Carro próprio</option>
-                <option>Carro alugado</option>
-                <option>Ônibus</option>
-                <option>Uber</option>
-                <option>Taxi</option>
-                <option>Metrô</option>
-                <option>Bicicleta</option>
-                <option>Caminhando</option>
-                <option>Outro</option>
-            }
-        </select>
-        <p>@TypeTransport.SelectedDiagnosisIdList[local]</p>
-    }
-    </div>
+   
 
 
 

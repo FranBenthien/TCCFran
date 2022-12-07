@@ -17,35 +17,33 @@
                 </div>
             <div class="col-lg-7 px-5 pt-3"> 
                     
-            <form>
-                <div class="form-row">
-                    <div class="col-lg-7">
-                        <input type="text" @bind-value="@email" placeholder="Email"class="form-control my-3 p-2">
-                    </div>
+            <div class="form-row">
+                <div class="col-lg-7">
+                    <input type="text" @bind-value="@email" placeholder="Email"class="form-control my-3 p-2">
                 </div>
-                <div class="form-row">
-                    <div class="col-lg-7">
-                        <input type="password" @bind-value="@password" placeholder="Senha"class="form-control my-3">
-                    </div>
+            </div>
+            <div class="form-row">
+                <div class="col-lg-7">
+                    <input type="password" @bind-value="@password" placeholder="Senha"class="form-control my-3">
                 </div>
-                <div class="form-row">
-                    <div class="col-lg-7">
-                        <button onclick="@UserLogin">
-                        Login
-                        </button>
-
-                    </div>
-                </div>
-                    <a href="#">Esqueci minha senha</a>
-                    <p>Não tem uma conta? <a href="#">Cadastre-se aqui</a></p>
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox"
-                        value="Lembre de mim">Lembre de mim
-                    </label>
+            </div>
+            <div class="form-row">
+                <div class="col-lg-7">
+                    <button onclick="@UserLogin">
+                    Login
+                    </button>
 
                 </div>
-            </form>
+            </div>
+                <a href="#">Esqueci minha senha</a>
+                <p>Não tem uma conta? <a href="#">Cadastre-se aqui</a></p>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"
+                    value="Lembre de mim">Lembre de mim
+                </label>
+
+            </div>
 
         </div> 
         </div>
