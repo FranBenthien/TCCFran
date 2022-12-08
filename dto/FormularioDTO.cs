@@ -4,7 +4,7 @@ public class FormularioDTO
 {
     public DateTime? ArrivalDate { get; set; }
     public DateTime? DepartureDate { get; set; }
-    public int Id { get; set; }
+    public int? Id { get; set; }
     public string? TypeHosting { get; set; } 
     public string? HostingAmount { get; set; }
     public string? Accommodation { get; set; } 
