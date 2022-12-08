@@ -28,7 +28,7 @@
       <h3 class="mb-3 mb-md-0">Qual local você procura?</h3>
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Digite aqui o nome da localidade desejada" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-dark btn-lg" type="button" id="button-addon2">Buscar</button>
+        <button class="btn btn-dark btn-lg" type="button" id="button-addon2" onclick="@Buscar">Buscar</button>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@
           <div class="card-body">
             <h5 class="card-title">Alimentação</h5>
             <p class="card-text">Conheça as opiniões dos nossos usuários sobre os melhores restaurantes de Curitiba</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <a href="/Visualizar">Saiba mais</a>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
           <div class="card-body">
             <h5 class="card-title">Hospedagem</h5>
             <p class="card-text">Conheça as opiniões dos nossos usuários sobre os melhores hotéis de Curitiba</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <a href="/Visualizar">Saiba mais</a>
           </div>
         </div>
       </div>
@@ -66,7 +66,7 @@
           <div class="card-body">
             <h5 class="card-title">Pontos turísticos</h5>
             <p class="card-text">Conheça as opiniões dos nossos usuários sobre os melhores pontos turísticos de Curitiba</p>
-            <a href="#" class="btn btn-primary">Saiba mais</a>
+            <a href="/Visualizar">Saiba mais</a>
           </div>
         </div>
       </div>
@@ -83,7 +83,7 @@
         <img src="img/digiteViagem.jpg" class="img-fluid" alt="">
       </div>
       <div class="col-md p-5">
-        <h2>Conte-nos sua experiência</h2>
+        <a class="text-dark" href="/formulario">Conte-nos sua experiência</a>
         <p class="lead" >
           Viajar é algo fantástico, não? Venha compartilhar suas viagens com mais usuários da nossa plataforma. Dessa forma, você não só poderá registrar suas experiências, mas também estará contribuindo com outras pessoas que desejam saber sobre o que fazer em Curitiba.
         </p>
@@ -97,7 +97,7 @@
     <div class="row align-items-center justify-content-between">
      
       <div class="col-md p-5">
-        <h2>Leia relatos de outros viajantes e descubra o que fazer em Curitiba</h2>
+        <a href="/Visualizar">Leia relatos de outros viajantes e descubra o que fazer em Curitiba</a>
         <p class="lead">
           Está pensando em conhecer Curitiba, mas não sabe o que fazer e onde ir? Então nossa plataforma de relatos de viagens é perfeita pra você! Venha saber mais sobre restaurantes, bares, pontos turísticos e hotéis visitados por outros viajantes e faça da sua estadia na cidade a melhor possível!
         </p>
@@ -113,6 +113,15 @@
 {
   public void Compartilhar()
   {
-    nav.NavigateTo("/formulario/0");
+    nav.NavigateTo("/formulario");
+  }
+
+  public void Buscar()
+  {
+    nav.NavigateTo("/Visualizar");
+  }
+  public void Conte()
+  {
+    nav.NavigateTo("/Formulario");
   }
 }

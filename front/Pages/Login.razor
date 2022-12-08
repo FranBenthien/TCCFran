@@ -36,7 +36,7 @@
                 </div>
             </div>
                 <a href="#">Esqueci minha senha</a>
-                <p>Não tem uma conta? <a href="#">Cadastre-se aqui</a></p>
+                <p>Não tem uma conta? <a href="/register">Cadastre-se aqui</a></p>
             <div class="checkbox">
                 <label>
                     <input type="checkbox"
@@ -60,20 +60,7 @@
     private string userId;
     private string loginError;
 
-    private JSRuntime runtime = null;
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (!firstRender)
-            return;
-        
-        foreach (var prop in typeof(ProtectedBrowserStorage).GetRuntimeFields())
-        {
-            if (prop.Name == "_jsRuntime")
-            {
-                runtime = prop.GetValue(storage) as JSRuntime;
-            }
-        }
-    }
+    
 
     public async void UserLogin()
     {
