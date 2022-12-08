@@ -26,7 +26,7 @@
                  
     <div>
     <h4 class="mb-3">Hospedagem</h4>
-    <form class="needs-validation">
+    <div class="needs-validation">
         <div class="row g-3">
             <div class="col-sm-6">
                 <label for="tipoHospedagem" class="form-label">Tipo de hospedagem:</label>
@@ -42,7 +42,7 @@
                 </input>>
             </div>
         </div>
-    </form>
+    </div>
     </div>
 
 
@@ -69,7 +69,7 @@
 
     <div>
     <h4 class="mt-3 mb-3">Alimentação</h4>
-    <form class="needs-validation" novalidate>
+    <div class="needs-validation" novalidate>
         <div class="row g-3">
             <div class="col-sm-6">
                 <label for="tipoEstabelecimento" class="form-label">Tipo de estabelecimento:</label>
@@ -85,7 +85,7 @@
                 </select>
             </div>
         </div>
-    </form>
+    </div>
     </div>
 
     <div class="col-sm-6">
@@ -116,7 +116,7 @@
 
     <div>
     <h4 class="mt-3 mb-3">Pontos Turísticos</h4>
-        <form class="needs-validation" novalidate>
+        <div class="needs-validation" novalidate>
             <div class="row g-3">
                 <div class="col-sm-6">
                 <label for="tipoAtracao" class="form-label">Tipos de atração:</label>
@@ -154,7 +154,7 @@
                 </div>
                 </div>
             </div>
-        </form>
+        </div>
     </div>    
 
     <div class="col-sm-6">
@@ -177,11 +177,6 @@
             <option>Outro</option>
         </select>
     </div>
-
-   
-
-
-
 
     <div class="col-12">
         <label for="relatoTur" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
@@ -256,6 +251,6 @@
                
         this.StateHasChanged();
 
-        nav.NavigateTo("/formulario");
+        nav.NavigateTo("/");
     }
 }
