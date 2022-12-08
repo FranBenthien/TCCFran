@@ -104,6 +104,81 @@ public class UserController : ControllerBase
              errors.Add("Data não informada");
         }
 
+        if (form.TypeHosting == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.HostingAmount == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.Accommodation == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.Link == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.HostingComments == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.Food == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.FoodAmount == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.TypeFood == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.FoodPlaceName == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.LinkFood == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.FoodComments == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.TypeAttraction == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.AttractionAmount == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.TypeTransport == null)
+        {
+             return this.BadRequest(errors);
+        }
+
+        if (form.AttractionComments == null)
+        {
+             return this.BadRequest(errors);
+        }
+
 
         Formulario formulario = new Formulario();   
         formulario.ArrivalDate = form.ArrivalDate.Value;
