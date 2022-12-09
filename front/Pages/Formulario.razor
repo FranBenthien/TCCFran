@@ -7,111 +7,240 @@
 @inject NavigationManager nav
 @inject ProtectedSessionStorage storage
 
-<div class="text-left">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.104.2">
+    <title>Checkout example · Bootstrap v5.2</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
+       
+
+    <link href="./assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+'       
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+    
+<div class="container">
+
     <div class="py-5 text-center">
         <img class="d-block mx-auto mb-4" src="img/curitibandoLogoPreto.png" alt="" width="282" height="200">
         <h2>Registre sua viagem</h2>
         <p class="lead">Preencha o formulário e enriqueça esse site para que os próximos visitantes possam aproveitar suas dicas e recomendações.</p>
     </div> 
 
-   <div class="form-group">
-        <label>Data de Chegada:</label>
-        <input type="date" @bind-value="@ArrivalDate" placeholder="00/00/0000"></input>
-    </div>
-    <div class="form-group">
-        <label>Data de Retorno: </label>
-        <input type="date" @bind-value="@DepartureDate" placeholder="00/00/0000"></input>
-    </div>
-           
-    
-    <h4 class="mb-3">Hospedagem</h4>
-        
-    <div class="col-sm-6">
-        <label for="TipoHospedagem" class="form-label">Tipo de hospedagem</label>
-        <input type="text" @bind-value="@TypeHosting" class="form-control" id="TipoHospedagem" placeholder="Digite tipo de hospedagem utilizada">   
-    </div>
-    
-    <div class="col-sm-6">
-        <label for="valorGasto" class="form-label">Valor gasto em R$:</label>
-        <input type="text" @bind-value="@HostingAmount" class="form-control" id="valorGasto" placeholder="Digite o valor gasto em sua estadia.">   
-    </div>
+        <div class="col-sm-6">
+            <label for="dataChegada">Data de chegada:</label>        
+            <input type="date" @bind-value="@ArrivalDate" class="form-control" min="1990-01-01" placeholder="00/00/0000">
+        </div>
 
-    <div class="col-sm-6">
-        <label for="nomeLocal" class="form-label">Nome do estabelecimento:</label>
-        <input type="text" @bind-value="@Accommodation" class="form-control" id="nomeLocal" placeholder="Digite o nome do local de hospedagem.">
-    </div>
-
-    <div class="col-sm-6">
-        <label for="linkContato" class="form-label">Link para contato:</label>
-        <input type="text" @bind-value="@Link" class="form-control" id="linkContato" placeholder="Adicione o link para contato com o local de hospedagem.">      
-    </div>
-
-    <div class="col-12">
-        <label for="relatoAlim" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
-        <input type="text" @bind-value="@HostingComments" class="form-control" id="comments" rows="3">
-    </div>
+        <div class="col-sm-6">
+            <label for="dataRetorno">Data de retorno:</label>        
+            <input type="date" @bind-value="@DepartureDate" class="form-control" min="1990-01-01" placeholder="00/00/0000">
             
+        </div>
 
-    <h4 class="mt-3 mb-3">Alimentação</h4>
+        <div> 
+            <h4 class="mb-3">Hospedagem</h4>
+            <form class="needs-validation" novalidate>
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label for="tipoHospedagem" class="form-label">Tipo de hospedagem:</label>
+                        <select class="form-select" id="country">
+                            <option value="">Escolha...</option>
+                            <option>Hotel</option>
+                            <option>Albergue</option>
+                            <option>Pousada</option>
+                            <option>AirBnb</option>
+                            <option>Resort</option>
+                            <option>Outro</option>'
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="valorGasto" class="form-label">Valor gasto:</label>
+                        <input type="text" @bind-value="@HostingAmount" class="form-control" id="valorGasto" placeholder="">
+                        <div class="invalid-feedback">
+                            Digite o valor gasto em sua estadia.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="nomeLocal" class="form-label">Nome do estabelecimento:</label>
+                        <input type="text" @bind-value="@Accommodation" class="form-control" id="nomeLocal" placeholder="">
+                        <div class="invalid-feedback">
+                            Digite o nome do local de hospedagem.
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="linkContato" class="form-label">Link para contato:</label>
+                        <input type="text" @bind-value="@Link" class="form-control" id="linkContato" placeholder="">
+                        <div class="invalid-feedback">
+                            Adicione o link para contato com o local de hospedagem.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <label for="relatoHosp" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
+                            <label for="exampleFormControlTextarea1" class="form-label"></label>
+                            <textarea class="form-control" id="relatoHosp" rows="5"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  <div class="container">
     
-    <div class="col-sm-6">
-        <label for="TipoEstabelecimento" class="form-label">Tipo de estabelecimento:</label>
-        <input type="text" @bind-value="@TypeFood" class="form-control" id="TipoEstabelecimento" placeholder="Informe se é um restaurante, padaria, etc...">   
-    </div>
-   
-    <div class="col-sm-6">
-        <label for="valorGastoAlim" class="form-label">Valor gasto em R$:</label>
-        <input type="text" @bind-value="@FoodAmount" class="form-control" id="valorGastoAlim" placeholder="Digite o valor gasto no estabelecimento.">   
-    </div>
-
-    <div class="col-sm-6">
-        <label for="tipodecomida" class="form-label">Tipo de comida consumida:</label>
-        <input type="text" @bind-value="@TypeFood" class="form-control" id="nomeLocal" placeholder="Digite o tipo de comida consumida.">
-    </div>
-
-    <div class="col-sm-6">
-        <label for="nomeLocal" class="form-label">Nome do estabelecimento:</label>
-        <input type="text" @bind-value="@FoodPlaceName" class="form-control" id="nomeLocal" placeholder="Digite o nome do estabelecimento.">
-    </div>
-
-    <div class="col-sm-6">
-        <label for="linkContato" class="form-label">Link para contato:</label>
-        <input type="text" @bind-value="@LinkFood" class="form-control" id="linkContato" placeholder="Adicione o link para contato com o estabelecimento.">         
-    </div>
-
-    <div class="col-12">
-        <label for="relatoAlim" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
-        <input type="text" @bind-value="@FoodComments" class="form-control" id="comments" rows="3">    
-    </div>
-
-
-    <h4 class="mt-3 mb-3">Pontos Turísticos</h4>
-        
-    <div class="col-sm-6">
-        <label for="TipoAtracao" class="form-label">Tipo de atração:</label>
-        <input type="text" @bind-value="@TypeAttraction" class="form-control" id="TipoAtracao" placeholder="Informe local visitado: museu, parque, etc...">   
-    </div>                  
       
-    <div class="col-sm-6">
-        <label for="valorGastoTur" class="form-label">Valor gasto em R$:</label>
-        <input type="text" @bind-value="@AttractionAmount" class="form-control" id="valorGasto" placeholder="Digite o valor gasto com passeios ou entradas.">   
-    </div>
+        <div>
+          <h4 class="mt-3 mb-3">Alimentação</h4>
+          <form class="needs-validation" novalidate>
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label for="tipoEstabelecimento" class="form-label">Tipo de estabelecimento:</label>
+                <select class="form-select" id="tipoEstabelecimento">
+                  <option value="">Escolha...</option>
+                  <option>Restaurante</option>
+                  <option>Lanchonete</option>
+                  <option>Panificadora/Padaria</option>
+                  <option>Bar</option>
+                  <option>Comida de rua</option>
+                  <option>Feira</option>
+                  <option>Outro</option>
+                </select>
+              </div>
+              <div class="col-sm-6">
+                <label for="valorGastoAlim" class="form-label">Valor gasto:</label>
+                <input type="text" @bind-value="@FoodAmount" class="form-control" id="valorGastoAlim" placeholder="">
+                <div class="invalid-feedback">
+                  Digite o valor gasto no estabelecimento.
+                </div>
+              </div>
 
-    <div class="col-sm-6">
-        <label for="tipoTranporte" class="form-label">Tipo de transporte:</label>
-        <input type="text" @bind-value="@TypeTransport" class="form-control" id="TipoTransporte" placeholder="Digite o meio de transporte utilizado: carro, ônibus, etc.">
-    </div>
+              <div class="col-sm-6">
+                <label for="nomeEstabelecimento" class="form-label">Nome do estabelecimento:</label>
+                <input type="text" @bind-value="@FoodPlaceName" class="form-control" id="nomeEstabelecimento" placeholder="">
+                <div class="invalid-feedback">
+                  Digite o nome do estabelecimento.
+                </div>
+              </div>
 
-    <div class="col-12">
-        <label for="relatoTur" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
-        <input type="text" @bind-value="@AttractionComments" class="form-control" id="comments" rows="3">
-    </div>
+              <div class="col-sm-6">
+                <label for="tipoAlim" class="form-label">Tipo de comida consumida:</label>
+                <input type="text" @bind-value="@TypeFood" class="form-control" id="tipoAlim" placeholder="">
+                <div class="invalid-feedback">
+                  Adicione o tipo de comida consumida no estabelecimento.
+                </div>
+              </div>
+  
+              <div class="col-sm-6">
+                <label for="linkContatoAlim" class="form-label">Link para contato:</label>
+                <input type="text" @bind-value="@LinkFood" class="form-control" id="linkContatoAlim" placeholder="">
+                <div class="invalid-feedback">
+                  Adicione o link para contato com o estabelecimento.
+                </div>
+              </div>
 
-    <button @onclick="createFormulario">
-        Salvar
-    </button> 
+              <div class="col-12">
+                <label for="relatoAlim" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
+                  <label for="exampleFormControlTextarea1" class="form-label"></label>
+                  <textarea class="form-control" id="relatoAlim" rows="5"></textarea>                
+                </div>
+              </div>
 
-</div>
+          </form>
+        </div>
+      </div>
+    
+    <div class="container">
+    
+        
+          <div>
+            <h4 class="mt-3 mb-3">Pontos Turísticos</h4>
+            <form class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="tipoAtracao" class="form-label">Tipos de atração:</label>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <label class="form-check-label" for="inlineCheckbox1">Parque</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <label class="form-check-label" for="inlineCheckbox2">Praça</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <label class="form-check-label" for="inlineCheckbox3">Museu</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                    <label class="form-check-label" for="inlineCheckbox4">Teatro</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                    <label class="form-check-label" for="inlineCheckbox5">Centro histórico</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                    <label class="form-check-label" for="inlineCheckbox6">Atrações naturais</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                    <label class="form-check-label" for="inlineCheckbox7">Atrações religiosas</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="inlineCheckbox8" value="option8">
+                    <label class="form-check-label" for="inlineCheckbox8">Turismo rural</label>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="valorGastoAlim" class="form-label">Valor gasto:</label>
+                  <input type="text" @bind-value="@AttractionAmount" class="form-control" id="valorGastoAlim" placeholder="">
+                  <div class="invalid-feedback">
+                    Digite o valor gasto no estabelecimento.
+                  </div>
+                </div>
+  
+                <div class="col-sm-6">
+                  <label for="tipoTranporte" class="form-label">Tipo de transporte:</label>
+                  <select class="form-select" id="tipoTransporte">
+                    <option value="">Escolha...</option>
+                    <option>Carro próprio</option>
+                    <option>Carro alugado</option>
+                    <option>Ônibus</option>
+                    <option>Uber</option>
+                    <option>Taxi</option>
+                    <option>Metrô</option>
+                    <option>Bicicleta</option>
+                    <option>Caminhando</option>
+                    <option>Outro</option>
+                  </select>
+                </div>
+  
+                <div class="col-12">
+                  <label for="relatoTur" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
+                    <label for="exampleFormControlTextarea1" class="form-label"></label>
+                    <textarea class="form-control" id="relatoTur" rows="5"></textarea>
+                  </div>
+                </div>
+                
+    
+              <hr class="my-4">
+    
+              <button class="w-100 btn btn-primary btn-lg" type="submit">Salvar</button>
+            </form>
+          </div>
+        </div>
+  </body>
+</html>
 
 
 @code

@@ -9,40 +9,38 @@
 
 
 <div class="text-center">
-  <div class="form-signin w-100 m-auto">
-    <form>
-      <img class="mb-4" src="img/curitibandoLogoPreto.png" alt="" width="182" height="110">
-      <h1 class="h3 fw-normal">Cadastre-se</h1>
+    <div class="form-signin w-100 m-auto">
+        <form>
+            <img class="mb-4" src="img/curitibandoLogoPreto.png" alt="" width="182" height="110">
+            <h1 class="h3 fw-normal">Cadastre-se</h1>
 
-      <div class="form-row">
-          <label>
-              <input type="text" @bind-value="@name" placeholder="Nome completo"class="form-control mt-3 mb-3">
-          </label>
-      </div>
-      <div class="form-row">
-          <label>
-              <input type="text" @bind-value="@email" placeholder="Email"class="form-control mb-3">
-          </label>
-      </div>
-      <div class="form-row">
-          <label>
-              <input type="password" @bind-value="@password" placeholder="Senha"class="form-control mb-3">
-          </label>
-      </div>
-      <div class="form-row">
-          <label>
-              <input type="password" @bind-value="@repeatpassword" placeholder="Confirmar senha"class="form-control mb-3">
-          </label>
-      </div>
-      
-      <div class="form-row">   
-      <button class @onclick="CreateAccount">
-                Cadastrar
-      </button>
-      </div>
-      
-    </form>
-  </div>    
+            <div class="form-row">
+                <label>
+                    <input type="text" @bind-value="@name" placeholder="Nome completo"class="form-control mt-3 mb-3">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <input type="text" @bind-value="@email" placeholder="Email"class="form-control mb-3">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <input type="password" @bind-value="@password" placeholder="Senha"class="form-control mb-3">
+                </label>
+            </div>
+            <div class="form-row">
+                <label>
+                    <input type="password" @bind-value="@repeatpassword" placeholder="Confirmar senha"class="form-control mb-3">
+                </label>
+            </div>
+            <div class="form-row">   
+                <label class="col-lg-2">
+                    <button type="button" class="btn1 mt-3 mb-5" @onclick="CreateAccount">Cadastrar</button>
+                </label>    
+            </div>   
+        </form>
+  </div>   
 </div>
 
 
