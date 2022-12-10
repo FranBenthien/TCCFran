@@ -20,5 +20,6 @@ public class FormularioDTO
     public string? AttractionAmount { get; set; } 
     public string? TypeTransport { get; set; } 
     public string? AttractionComments { get; set; } 
+    public string? Token { get; set; }
         
 }

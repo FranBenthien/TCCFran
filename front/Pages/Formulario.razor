@@ -91,7 +91,8 @@
                     <div class="col-12">
                         <label for="relatoHosp" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
                             <label for="exampleFormControlTextarea1" class="form-label"></label>
-                            <textarea class="form-control" id="relatoHosp" rows="5"></textarea>
+                            <input type="text" @bind-value="@HostingComments" class="form-control" id="comments" rows="3">
+                            
                     </div>
                 </div>
             </div>
@@ -154,7 +155,7 @@
               <div class="col-12">
                 <label for="relatoAlim" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
                   <label for="exampleFormControlTextarea1" class="form-label"></label>
-                  <textarea class="form-control" id="relatoAlim" rows="5"></textarea>                
+                  <input type="text" @bind-value="@FoodComments" class="form-control" id="comments" rows="3">                
                 </div>
               </div>
 
@@ -211,7 +212,7 @@
                 <div class="col-12">
                   <label for="relatoTur" class="form-label">Conte-nos sua experiência/curiosidades/dicas:</label>
                     <label for="exampleFormControlTextarea1" class="form-label"></label>
-                    <textarea class="form-control" id="relatoTur" rows="5"></textarea>
+                    <input type="text" @bind-value="@AttractionComments" class="form-control" id="comments" rows="3">                    
                   </div>
                 </div>
                 
@@ -248,6 +249,12 @@
     
     public async void createFormulario()
     {    
+        
+        
+        var token = await storage.GetAsync<string>("token");     
+        
+          
+              
         await service.Formulario(            
             this.ArrivalDate,
             this.DepartureDate,            
@@ -265,7 +272,8 @@
             this.TypeAttraction,
             this.AttractionAmount,
             this.TypeTransport,
-            this.AttractionComments);
+            this.AttractionComments,
+            token.Value);
 
         this.ArrivalDate= DateTime.Now;
         this.DepartureDate= DateTime.Now;

@@ -5,6 +5,7 @@ namespace back.Model
 {
     public partial class Formulario
     {
+        
         public int Id { get; set; }
         public int? UserId { get; set; }
         public DateTime ArrivalDate { get; set; }

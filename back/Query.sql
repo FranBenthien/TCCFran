@@ -16,8 +16,7 @@ go
 create table Usuario(
 	ID int identity primary key,
 	Name varchar(100) not null,
-	Email varchar(100) not null, 
-	UserID varchar(60) not null, 
+	Email varchar(100) not null, 	 
 	Userpass varchar(MAX) not null
 );
 go

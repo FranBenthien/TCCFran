@@ -54,7 +54,7 @@ public class UserService
         return content.Content;
         
     }
-    public async Task Formulario(        
+    public async Task Formulario(                
         DateTime ArrivalDate,            
         DateTime DepartureDate,     
         string TypeHosting,
@@ -71,10 +71,11 @@ public class UserService
         string TypeAttraction,
         string AttractionAmount,
         string TypeTransport,
-        string AttractionComments)
+        string AttractionComments,
+        string Token)
         
     {
-        FormularioDTO form = new FormularioDTO();        
+        FormularioDTO form = new FormularioDTO();                 
         form.ArrivalDate = ArrivalDate;        
         form.DepartureDate = DepartureDate;
         form.TypeHosting = TypeHosting;
@@ -92,6 +93,7 @@ public class UserService
         form.AttractionAmount = AttractionAmount;
         form.TypeTransport = TypeTransport;
         form.AttractionComments = AttractionComments;
+        form.Token = Token;
         
 
         var result = await client

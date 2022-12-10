@@ -13,7 +13,8 @@ public class FormController : ControllerBase
     
     [HttpPost("formulario")]
     public IActionResult Formulario(
-        [FromBody]FormularioDTO form
+        [FromBody]FormularioDTO form, 
+        [FromServices]TokenService service
         )
     {
         using WebSiteViagemContext context = new WebSiteViagemContext();
@@ -50,13 +51,19 @@ public class FormController : ControllerBase
         formulario.AttractionAmount = form.AttractionAmount;
         formulario.TypeTransport = form.TypeTransport;
         formulario.AttractionComments = form.AttractionComments;
+               
    
-                     
+        var user = service.TokenValidation(form.Token);
+
+        formulario.UserId = user.Id;
+
         context.Add(formulario);
         context.SaveChanges();
 
         return Ok();
         
     }
+
+    
 
 }
