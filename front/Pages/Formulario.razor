@@ -249,12 +249,9 @@
     
     public async void createFormulario()
     {    
-        
-        
+               
         var token = await storage.GetAsync<string>("token");     
-        
-          
-              
+               
         await service.Formulario(            
             this.ArrivalDate,
             this.DepartureDate,            
